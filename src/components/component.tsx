@@ -2,8 +2,10 @@ import { DomainsPage } from "@absmach/magistrala-sdk";
 
 export default async function PublicComponent({
   domains,
+  className,
 }: {
   domains: DomainsPage;
+  className?: string;
 }) {
   return (
     <div>
@@ -13,7 +15,7 @@ export default async function PublicComponent({
       {domains.domains.map((domain) => (
         <div
           key={domain.id}
-          className="border rounded-md p-4 flex flex-col gap-4"
+          className={`border rounded-md p-4 flex flex-col gap-4 ${className}`}
         >
           <span>Name: {domain.name}</span>
           <span>ID: {domain.id}</span>
