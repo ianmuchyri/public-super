@@ -1,7 +1,10 @@
-import { ListDomains } from "@/lib/magistrala";
+import { DomainsPage } from "@absmach/magistrala-sdk";
 
-export default async function PublicComponent() {
-  const domains = await ListDomains();
+export default async function PublicComponent({
+  domains,
+}: {
+  domains: DomainsPage;
+}) {
   return (
     <div>
       <h2 className="font-semibold text-xl mb-4">
