@@ -1,4 +1,5 @@
 import PublicComponent from "@/components/component";
+import UsersComponent from "@/components/users";
 import { ListDomains } from "@/lib/magistrala";
 
 export default async function Home() {
@@ -10,6 +11,7 @@ export default async function Home() {
           This is the public repo main page
         </h1>
         <PublicComponent domains={domains} />
+        <UsersComponent />
       </main>
     </div>
   );

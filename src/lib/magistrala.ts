@@ -36,3 +36,17 @@ export const ListDomains = async () => {
     throw error;
   }
 };
+
+export const ListUsers = async () => {
+  try {
+    const token = await getToken();
+    const users = await mgsdk.users.Users(
+      { offset: 0, limit: 5 },
+      token.access_token
+    );
+    return users;
+  } catch (error) {
+    console.error("list users error: ", error);
+    throw error;
+  }
+};
